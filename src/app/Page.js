@@ -1,18 +1,16 @@
-import React from 'react'
-import Header from './components/Header'
-// import SideBar from './components/SideBar'
-// import Picture from './Picture'
+import React from 'react';
+import Header from './components/Header';
+import Content from './components/Content';
 
-import './Page.css'
+import './Page.css';
 
 const Page = () => {
   return (
     <div className="app">
       <Header />
-      {/* <SideBar />
-      <Picture /> */}
+      <Content />
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

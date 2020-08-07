@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  Col,
-  InputGroup,
-  FormControl,
-  Button,
-} from 'react-bootstrap';
+import { Navbar, Nav, Form, InputGroup, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
@@ -18,9 +9,6 @@ const Header = () => {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="/">Karasic</Navbar.Brand>
       <Nav className="mr-auto">
-        <Button className="mr-3" variant="outline-light" block>
-          Upload picture
-        </Button>
         <InputGroup>
           <InputGroup.Prepend>
             <Button variant="outline-light">
