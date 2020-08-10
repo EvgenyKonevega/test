@@ -1,13 +1,21 @@
 import React from 'react';
 import { Navbar, Nav, Form, InputGroup, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faFeather } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
 
 const Header = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/">Karasic</Navbar.Brand>
+    <Navbar
+      style={{ position: 'fixed' }}
+      collapseOnSelect
+      expand="lg"
+      bg="dark"
+      variant="dark"
+    >
+      <Navbar.Brand href="/">
+        <FontAwesomeIcon icon={faFeather} />
+      </Navbar.Brand>
       <Nav className="mr-auto">
         <InputGroup>
           <InputGroup.Prepend>

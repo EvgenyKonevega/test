@@ -1,0 +1,103 @@
+.sidebar {
+  width: 4rem;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: 200ms ease;
+  overflow-y: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #706eff9e;
+  /* background: #6649b8; */
+}
+.sidebar::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+.sidebar:hover {
+  width: 25rem;
+}
+
+.sidebar:hover .item-text {
+  display: block;
+}
+
+.sidebar-side {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-icon {
+  margin-left: 0.5rem;
+}
+
+.item-text {
+  display: none;
+  margin-left: 1rem;
+  font-size: 20px;
+}
+
+.side-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  color: var(--text-primary);
+  filter: grayscale(100%) opacity(0.6);
+  transition: 400ms;
+}
+
+.side-item:hover {
+  filter: grayscale(0) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.side-item:hover svg {
+  color: #fd7feca4;
+}
+
+.side-item-active {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  color: #04da0a;
+  filter: grayscale(40%) opacity(0.6);
+  transition: 400ms;
+}
+
+.side-item-active:hover {
+  filter: grayscale(0) opacity(1);
+  background: var(--bg-secondary);
+}
+
+.logo {
+  width: 100%;
+  margin-top: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: transform 600ms;
+}
+
+.sidebar:hover .logo svg {
+  transform: rotate(-180deg);
+}

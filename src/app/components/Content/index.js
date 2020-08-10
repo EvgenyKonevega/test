@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import DragAndDrop from '../DragAndDrop/DragAndDrop';
 import { useDropzone } from 'react-dropzone';
 import Post from './Post';
+import SideBar from '../SideBar';
 import './index.css';
 
 const Content = (props) => {
@@ -10,7 +11,6 @@ const Content = (props) => {
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
     onDrop: (acceptedFiles) => {
-      console.log(acceptedFiles);
       setTags([]);
       setFile(
         Object.assign(acceptedFiles[0], {
@@ -27,6 +27,7 @@ const Content = (props) => {
   };
 
   const handleChangingTag = (tag) => {
+    console.log(tag);
     let tagList = tags;
     tagList.map((o) => {
       if (o.id === tag.id) {
@@ -34,6 +35,7 @@ const Content = (props) => {
       }
       return o;
     });
+    console.log(tagList);
     setTags(tagList);
   };
 
@@ -45,17 +47,20 @@ const Content = (props) => {
   );
 
   return (
-    <div className="container">
-      <div {...getRootProps({ className: 'dropzone' })}>
-        <input {...getInputProps()} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
+    <div className="page-container">
+      <SideBar tags={tags} handleChangingTag={handleChangingTag} />
+      <div className="content">
+        <div {...getRootProps({ className: 'dropzone' })}>
+          <input {...getInputProps()} />
+          <p>Drag 'n' drop some files here, or click to select files</p>
+        </div>
+        <Post
+          file={file}
+          tags={tags}
+          handleChangingTag={handleChangingTag}
+          handnleTagCreation={handnleTagCreation}
+        />
       </div>
-      <Post
-        file={file}
-        tags={tags}
-        handleChangingTag={handleChangingTag}
-        handnleTagCreation={handnleTagCreation}
-      />
     </div>
   );
 };
