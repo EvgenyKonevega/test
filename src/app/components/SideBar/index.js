@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMapPin,
   faAngleDoubleRight,
+  faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
 
@@ -13,10 +14,16 @@ class SideBar extends Component {
         <div
           className={tag.isActive ? 'side-item-active' : 'side-item'}
           key={tag.id}
-          onClick={() => this.props.changeTagState(tag)}
         >
-          <FontAwesomeIcon size="2x" className="item-icon" icon={faMapPin} />
-          <span className="item-text">{tag.text}</span>
+          <div className="item" onClick={() => this.props.changeTagState(tag)}>
+            <FontAwesomeIcon size="2x" className="item-icon" icon={faMapPin} />
+            <span className="item-text">{tag.text}</span>
+          </div>
+          <FontAwesomeIcon
+            className="item-remove-icon"
+            onClick={() => this.props.deleteTag(tag)}
+            icon={faTimes}
+          />
         </div>
       );
     });

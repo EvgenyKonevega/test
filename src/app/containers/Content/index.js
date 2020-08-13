@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 // import DragAndDrop from '../DragAndDrop/DragAndDrop';
 import { useDropzone } from 'react-dropzone';
 import { Modal, Button, Form } from 'react-bootstrap/';
-import Post from './Post';
-import SideBar from '../SideBar';
+import Image from '../../components/Image/Image';
+import SideBar from '../../components/SideBar';
 import './index.css';
 
 const Content = (props) => {
@@ -20,17 +20,8 @@ const Content = (props) => {
     },
   });
 
-  // const handleChangingTag = (tag) => {
-  //   const newTags = tags.map((o) => {
-  //     if (o.id === tag.id) {
-  //       return tag;
-  //     }
-  //     return o;
-  //   });
-  //   setTags(newTags);
-  // };
-
   const changeTagState = (tag) => {
+    console.log('chagne sate');
     tag.isActive = !tag.isActive;
     const newTags = tags.map((o) => {
       if (o.id === tag.id) {
@@ -40,7 +31,13 @@ const Content = (props) => {
       }
     });
     setTags(newTags);
-    // handleChangingTag(tag);
+  };
+
+  const deleteTag = (tag) => {
+    console.log('delete tag');
+    const newTags = tags.filter((o) => o.id !== tag.id);
+    setTags(newTags);
+    console.log(tags);
   };
 
   const handleCloseModal = () => {
@@ -94,13 +91,17 @@ const Content = (props) => {
 
   return (
     <div className="page-container">
-      <SideBar tags={tags} changeTagState={changeTagState} />
+      <SideBar
+        tags={tags}
+        changeTagState={changeTagState}
+        deleteTag={deleteTag}
+      />
       <div className="content">
         <div {...getRootProps({ className: 'dropzone' })}>
           <input {...getInputProps()} />
           <p>Drag 'n' drop some files here, or click to select files</p>
         </div>
-        <Post
+        <Image
           fileURL={fileURL}
           tags={tags}
           handleTagCreation={handleTagCreation}

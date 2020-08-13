@@ -23,7 +23,8 @@
   width: 25rem;
 }
 
-.sidebar:hover .item-text {
+.sidebar:hover .item-text,
+.sidebar:hover .item-remove-icon {
   display: block;
 }
 
@@ -61,7 +62,7 @@
   color: var(--text-primary);
 }
 
-.side-item:hover svg {
+.side-item:hover .item-icon {
   color: #fd7feca4;
 }
 
@@ -78,6 +79,10 @@
 .side-item-active:hover {
   filter: grayscale(0) opacity(1);
   background: var(--bg-secondary);
+}
+
+.side-item-active .item-remove-icon {
+  color: var(--text-primary);
 }
 
 .logo {
@@ -100,4 +105,19 @@
 
 .sidebar:hover .logo svg {
   transform: rotate(-180deg);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.item-remove-icon {
+  display: none;
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+.item-remove-icon:hover {
+  color: white;
 }

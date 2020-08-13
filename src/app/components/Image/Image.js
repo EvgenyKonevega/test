@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapPin } from '@fortawesome/free-solid-svg-icons';
 
-class Post extends Component {
+class Image extends Component {
   renderTags = () => {
     return this.props.tags.map((tag) => {
       return (
         <div
-          // onMouseDown={handleMove}
-          // onMouseUp={() => this.handleChangineTagPosition(e)}
           className={tag.isActive ? 'tag active' : 'tag'}
           key={tag.id}
           style={{ top: tag.y - 11, left: tag.x + 1 }}
@@ -39,4 +37,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default Image;
