@@ -65,6 +65,10 @@
   align-items: center;
 }
 
+.active {
+  color: #04da0a;
+}
+
 .tag-content {
   background-color: rgba(0, 0, 0, 0.75);
   color: #bdbdbd;

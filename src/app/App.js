@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Content from './components/Content';
 
-const Page = () => {
+const App = () => {
   return (
     <div className="app">
       <Header />
@@ -11,4 +11,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default App;
