@@ -34,10 +34,8 @@ const Content = (props) => {
   };
 
   const deleteTag = (tag) => {
-    console.log('delete tag');
     const newTags = tags.filter((o) => o.id !== tag.id);
     setTags(newTags);
-    console.log(tags);
   };
 
   const handleCloseModal = () => {
