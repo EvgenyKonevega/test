@@ -21,7 +21,6 @@ const Content = (props) => {
   });
 
   const changeTagState = (tag) => {
-    console.log('chagne sate');
     tag.isActive = !tag.isActive;
     const newTags = tags.map((o) => {
       if (o.id === tag.id) {
@@ -56,6 +55,8 @@ const Content = (props) => {
     let tagList = tags;
     tagList.push({ ...tempTag, text: textFieldValue });
     setTags(tagList);
+    setTempTag({});
+    setTextFieldValue('');
     setModalState(false);
   };
 
